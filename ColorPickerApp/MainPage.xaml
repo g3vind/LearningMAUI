@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorPickerApp.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryColor">#6200EE</Color>
+        <Color x:Key="SecondaryColor">#03DAC6</Color>
+        <Color x:Key="BackgroundColor">#FFFFFF</Color>
+        <Color x:Key="TextColor">#000000</Color>
+    </ContentPage.Resources>
+
+    <Grid x:Name="Container" BackgroundColor="{StaticResource TextColor}">
+        <Frame Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+
+                <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Text="Welcome to Color Picker App!"/>
+                <Label FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" Text="Color Maker"/>
+
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="Red Value"/>
+                        <Slider x:Name="sldRed"
+                                Minimum="0" Maximum="255"
+                                BackgroundColor="Red"
+                                HorizontalOptions="Fill"
+                                ThumbColor="Gray"
+                                MaximumTrackColor="{StaticResource PrimaryColor}"
+                                MinimumTrackColor="{StaticResource SecondaryColor}"
+                                ValueChanged="Slider_ValueChanged"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="Blue Value"/>
+                        <Slider x:Name="sldBlue"
+                                Minimum="0" Maximum="255"
+                                BackgroundColor="Blue"
+                                HorizontalOptions="Fill"
+                                ThumbColor="Gray"
+                                MaximumTrackColor="{StaticResource PrimaryColor}"
+                                MinimumTrackColor="{StaticResource SecondaryColor}"
+                                ValueChanged="Slider_ValueChanged"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="Green Value"/>
+                        <Slider x:Name="sldGreen"
+                                Minimum="0" Maximum="255"
+                                BackgroundColor="Green"
+                                HorizontalOptions="Fill"
+                                ThumbColor="Gray"
+                                MaximumTrackColor="{StaticResource PrimaryColor}"
+                                MinimumTrackColor="{StaticResource SecondaryColor}"
+                                ValueChanged="Slider_ValueChanged"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+
+                <Frame CornerRadius="25" HorizontalOptions="Center" BackgroundColor="Aquamarine">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lbl" Text="HEX COLOR : #FFFFFF" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+                        <ImageButton Margin="10,0,0,0" HeightRequest="25" Source="copy.png" Clicked="ImageButton_Clicked">
+                            
+                        </ImageButton>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame CornerRadius="10" HorizontalOptions="Center" WidthRequest="250" HeightRequest="80" BackgroundColor="BurlyWood">
+                    <Button x:Name="generateColor" Text="Generate Random Color" HeightRequest="50" WidthRequest="220"
+                            Clicked="generateColor_Clicked" BackgroundColor="DarkGreen"></Button>
+                </Frame>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
