@@ -1,4 +1,4 @@
-﻿namespace PerfectPay
+﻿namespace DataBindingTutorial
 {
     public partial class App : Application
     {
