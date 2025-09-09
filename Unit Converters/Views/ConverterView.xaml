@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Unit_Converters.Views.ConverterView"
+             Title="ConverterView">
+
+    <!-- page color resources -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="AppColor1">#10002b</Color>
+            <Color x:Key="AppColor2">#240046</Color>
+            <Color x:Key="AppColor3">#3c096c</Color>
+            <Color x:Key="AppColor4">#5a189a</Color>
+            <Color x:Key="TextColor">white</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="*,*" BackgroundColor="{StaticResource AppColor1}">
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource AppColor3}">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill">
+                <Entry FontSize="30" HorizontalTextAlignment="Center" Text="{Binding FromValue}" WidthRequest="100" TextColor="{StaticResource TextColor}"
+                       Keyboard="Numeric" ReturnType="Go" ReturnCommand="{Binding ReturnCommand}"/>
+                <Picker HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" TextColor="{StaticResource TextColor}"
+                        ItemsSource="{Binding FromMesaures}" SelectedItem="{Binding CurrentValueFromMeasure, Mode=TwoWay}"></Picker>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="1" BackgroundColor="{StaticResource AppColor4}">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill">
+                <Label FontSize="30" HorizontalTextAlignment="Center" Text="{Binding ToValue}" TextColor="{StaticResource TextColor}"
+            />
+                <Picker HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" TextColor="{StaticResource TextColor}"
+                        ItemsSource="{Binding ToMesaures}" SelectedItem="{Binding CurrentValueToMeasure, Mode=TwoWay}"></Picker>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+    
+</ContentPage>
