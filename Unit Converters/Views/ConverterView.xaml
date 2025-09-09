@@ -20,9 +20,9 @@
         <Grid Grid.Row="0" BackgroundColor="{StaticResource AppColor3}">
             <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Fill">
                 <Entry FontSize="30" HorizontalTextAlignment="Center" Text="{Binding FromValue}" WidthRequest="100" TextColor="{StaticResource TextColor}"
-                       Keyboard="Numeric" ReturnType="Go" ReturnCommand="{Binding ReturnCommand}"/>
+                       Keyboard="Numeric" ReturnType="Go" ReturnCommand="{Binding ReturnCommand}" TextChanged="Entry_TextChanged"/>
                 <Picker HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" TextColor="{StaticResource TextColor}"
-                        ItemsSource="{Binding FromMesaures}" SelectedItem="{Binding CurrentValueFromMeasure, Mode=TwoWay}"></Picker>
+                        ItemsSource="{Binding FromMesaures}" SelectedItem="{Binding CurrentValueFromMeasure, Mode=TwoWay}" SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
             </VerticalStackLayout>
         </Grid>
         <Grid Grid.Row="1" BackgroundColor="{StaticResource AppColor4}">
@@ -30,7 +30,7 @@
                 <Label FontSize="30" HorizontalTextAlignment="Center" Text="{Binding ToValue}" TextColor="{StaticResource TextColor}"
             />
                 <Picker HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" TextColor="{StaticResource TextColor}"
-                        ItemsSource="{Binding ToMesaures}" SelectedItem="{Binding CurrentValueToMeasure, Mode=TwoWay}"></Picker>
+                        ItemsSource="{Binding ToMesaures}" SelectedItem="{Binding CurrentValueToMeasure, Mode=TwoWay}" SelectedIndexChanged="Picker_SelectedIndexChanged"></Picker>
             </VerticalStackLayout>
         </Grid>
     </Grid>
